@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   end
 
   resources :machines, only: [:show]
-
-  get "snacks/:id", to: "snacks#show"
+  resources :snacks, only: [:show]
 end
