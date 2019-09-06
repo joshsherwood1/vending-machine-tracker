@@ -9,7 +9,7 @@ RSpec.describe "When a user visits the vending machine show page", type: :featur
     snack_2 = basement.snacks.create(name: "Chocolate", price: 2.50)
     snack_3 = mixed_drinks.snacks.create(name: "Gatorade", price: 3.50)
     snack_4 = mixed_drinks.snacks.create(name: "Soda", price: 5.00)
-    #visit "/machines/#{basement.id}"
+
     visit machine_path(basement)
     expect(page).to have_content("#{snack_1.name}")
     expect(page).to have_content("Price: $#{snack_1.price}")
@@ -17,7 +17,7 @@ RSpec.describe "When a user visits the vending machine show page", type: :featur
     expect(page).to have_content("Price: $#{snack_2.price}")
     expect(page).to have_content("Average Price for All Snacks: $2.00")
 
-    #visit "/machines/#{mixed_drinks.id}"
+  
     visit machine_path(mixed_drinks)
     expect(page).to have_content("#{snack_3.name}")
     expect(page).to have_content("Price: $#{snack_3.price}")
